@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZyncPay - Start Earning Daily with Telegram</title>
+    <meta name="description" content="Join ZyncPay, the Telegram-based platform to earn daily income and referral bonuses. Activate a plan and start your earning journey today.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Base styling */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+        }
+        /* Custom gradient text */
+        .gradient-text {
+            background: linear-gradient(to right, #2dd4bf, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Page transition effect */
+        .page {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-black/30 backdrop-blur-lg sticky top-0 z-50 border-b border-gray-800">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" onclick="showPage('home')" class="text-2xl font-bold gradient-text">ZyncPay</a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#" onclick="showPage('home')" class="text-gray-300 hover:text-teal-400 transition">Home</a>
+                <a href="#" onclick="showPage('plans')" class="text-gray-300 hover:text-teal-400 transition">Plans</a>
+                <a href="#" onclick="showPage('faq')" class="text-gray-300 hover:text-teal-400 transition">FAQ</a>
+                <a href="#" onclick="showPage('about')" class="text-gray-300 hover:text-teal-400 transition">About</a>
+                <a href="#" onclick="showPage('contact')" class="text-gray-300 hover:text-teal-400 transition">Contact</a>
+            </div>
+            <a href="https://t.me/YourBotUsername" target="_blank" class="hidden md:block bg-teal-500 hover:bg-teal-600 text-white font-semibold px-5 py-2 rounded-lg transition">Start on Telegram</a>
+            <button id="mobile-menu-button" class="md:hidden text-gray-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="#" onclick="showPage('home')" class="block text-gray-300 hover:text-teal-400 transition py-2">Home</a>
+            <a href="#" onclick="showPage('plans')" class="block text-gray-300 hover:text-teal-400 transition py-2">Plans</a>
+            <a href="#" onclick="showPage('faq')" class="block text-gray-300 hover:text-teal-400 transition py-2">FAQ</a>
+            <a href="#" onclick="showPage('about')" class="block text-gray-300 hover:text-teal-400 transition py-2">About</a>
+            <a href="#" onclick="showPage('contact')" class="block text-gray-300 hover:text-teal-400 transition py-2">Contact</a>
+            <a href="https://t.me/YourBotUsername" target="_blank" class="block w-full text-center bg-teal-500 hover:bg-teal-600 text-white font-semibold mt-4 px-5 py-2 rounded-lg transition">Start on Telegram</a>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container mx-auto px-6 py-12 md:py-20">
+
+        <!-- Home Page -->
+        <div id="home-page" class="page">
+            <section class="text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Start Your <span class="gradient-text">Daily Earning Journey</span> with ZyncPay</h1>
+                <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-8">Join our secure Telegram platform, activate a plan, and unlock daily income and powerful referral bonuses. Simple, automated, and effective.</p>
+                <a href="https://t.me/YourBotUsername" target="_blank" class="bg-teal-500 hover:bg-teal-600 text-white font-bold text-lg px-8 py-4 rounded-lg transition inline-block">
+                    🚀 Launch Telegram Bot
+                </a>
+            </section>
+
+            <section class="py-20">
+                <h2 class="text-3xl font-bold text-center mb-12">How It Works in 3 Simple Steps</h2>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-gray-900 p-8 rounded-xl border border-gray-800">
+                        <div class="text-4xl mb-4">1️⃣</div>
+                        <h3 class="text-xl font-bold mb-2">Join the Bot</h3>
+                        <p class="text-gray-400">Click the "Launch" button to start our secure bot on Telegram. No complex sign-ups required.</p>
+                    </div>
+                    <div class="bg-gray-900 p-8 rounded-xl border border-gray-800">
+                        <div class="text-4xl mb-4">2️⃣</div>
+                        <h3 class="text-xl font-bold mb-2">Activate a Plan</h3>
+                        <p class="text-gray-400">Choose from our Basic, Plus, or Elite plans to start receiving your daily automated income.</p>
+                    </div>
+                    <div class="bg-gray-900 p-8 rounded-xl border border-gray-800">
+                        <div class="text-4xl mb-4">3️⃣</div>
+                        <h3 class="text-xl font-bold mb-2">Refer & Earn</h3>
+                        <p class="text-gray-400">Share your unique referral code. You'll earn a generous bonus for every new user who activates a plan.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="py-12">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold mb-4">Our Earning Plans</h2>
+                    <p class="text-gray-400 mb-10">Choose the plan that fits your goals. Higher plans offer greater daily income and bigger bonuses.</p>
+                    <a href="#" onclick="showPage('plans')" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold px-6 py-3 rounded-lg transition">View All Plans in Detail</a>
+                </div>
+            </section>
+        </div>
+
+        <!-- Plans Page -->
+        <div id="plans-page" class="page hidden">
+             <section class="text-center">
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4"><span class="gradient-text">Choose Your Plan</span></h1>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-12">All plans are designed to provide consistent daily income and reward you for growing the community. Validity for daily income is 30 days.</p>
+            </section>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Basic Plan -->
+                <div class="bg-gray-900 p-8 rounded-xl border-2 border-teal-500 flex flex-col">
+                    <h3 class="text-2xl font-bold mb-2">Basic Plan</h3>
+                    <p class="text-4xl font-bold mb-4">₹1,499</p>
+                    <p class="text-gray-400 mb-6">Ideal for getting started and understanding the platform.</p>
+                    <ul class="space-y-4 text-gray-300 flex-grow">
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Daily Income: ₹100</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Weekly Bonus: ₹250</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Referral Bonus: 10%</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Withdrawal Unlock: 1 Active Referral</li>
+                    </ul>
+                    <a href="https://t.me/YourBotUsername" target="_blank" class="mt-8 w-full text-center bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 rounded-lg transition">Activate Basic</a>
+                </div>
+                <!-- Plus Plan -->
+                <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 flex flex-col">
+                    <h3 class="text-2xl font-bold mb-2">Plus Plan</h3>
+                    <p class="text-4xl font-bold mb-4">₹4,499</p>
+                    <p class="text-gray-400 mb-6">The most popular choice for serious earners looking for higher returns.</p>
+                    <ul class="space-y-4 text-gray-300 flex-grow">
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Daily Income: ₹300</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Weekly Bonus: ₹600</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Referral Bonus: 12%</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Withdrawal Unlock: 1 Active Referral</li>
+                    </ul>
+                    <a href="https://t.me/YourBotUsername" target="_blank" class="mt-8 w-full text-center bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded-lg transition">Activate Plus</a>
+                </div>
+                <!-- Elite Plan -->
+                <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 flex flex-col">
+                    <h3 class="text-2xl font-bold mb-2">Elite Plan</h3>
+                    <p class="text-4xl font-bold mb-4">₹9,500</p>
+                    <p class="text-gray-400 mb-6">Maximum earning potential for dedicated users and network builders.</p>
+                    <ul class="space-y-4 text-gray-300 flex-grow">
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Daily Income: ₹750</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Weekly Bonus: ₹1,200</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Referral Bonus: 15%</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Withdrawal Unlock: 1 Active Referral</li>
+                    </ul>
+                    <a href="https://t.me/YourBotUsername" target="_blank" class="mt-8 w-full text-center bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded-lg transition">Activate Elite</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Page -->
+        <div id="faq-page" class="page hidden">
+            <section class="text-center">
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4"><span class="gradient-text">Frequently Asked Questions</span></h1>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-12">Have questions? We've got answers. Here are some of the most common queries we receive.</p>
+            </section>
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                    <h3 class="font-bold text-lg mb-2">What is ZyncPay?</h3>
+                    <p class="text-gray-400">ZyncPay is a Telegram-based platform that allows users to earn a daily income by activating one of our plans. Users can also earn significant bonuses by referring new members to the platform.</p>
+                </div>
+                <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                    <h3 class="font-bold text-lg mb-2">Is this a safe investment?</h3>
+                    <p class="text-gray-400">We use secure payment gateways for plan activation and a transparent system for tracking earnings. However, like any platform involving financial returns, users should understand the model and participate responsibly. We prioritize platform stability and user security.</p>
+                </div>
+                <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                    <h3 class="font-bold text-lg mb-2">How do I withdraw my earnings?</h3>
+                    <p class="text-gray-400">Once you have at least one active referral, you can request a withdrawal directly from the bot's Wallet section. The minimum withdrawal amount is ₹250. Requests are processed by our admin team and sent to your provided UPI ID.</p>
+                </div>
+                 <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                    <h3 class="font-bold text-lg mb-2">How long does it take for my account to be activated?</h3>
+                    <p class="text-gray-400">After you make a payment and upload the screenshot in the bot, our admin team will verify it. Activation is typically completed within a few hours, but please allow up to 24 hours.</p>
+                </div>
+                <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                    <h3 class="font-bold text-lg mb-2">How does the referral system work?</h3>
+                    <p class="text-gray-400">When a new user joins using your unique referral code and activates a plan, you receive a one-time bonus. The bonus amount is a percentage of their plan's cost, as detailed on our Plans page. Your referral also needs to be 'active' (i.e., have their own plan) for you to be eligible for withdrawals.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Page -->
+        <div id="about-page" class="page hidden">
+            <section class="text-center">
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4"><span class="gradient-text">Our Mission</span></h1>
+            </section>
+            <div class="max-w-3xl mx-auto text-lg text-gray-300 leading-relaxed">
+                <p class="mb-6">At ZyncPay, our mission is to create an accessible and straightforward platform for individuals to generate supplementary income online. We believe in the power of community and have built our system around a referral model that rewards users for helping us grow.</p>
+                <p class="mb-6">We are committed to transparency, security, and user support. The entire platform is managed through the convenience of Telegram, making it easy for anyone to join and start their earning journey without needing complex technical skills. We aim to provide a stable and reliable service where our users feel valued and can achieve their financial goals.</p>
+                <p>Welcome to the ZyncPay community.</p>
+            </div>
+        </div>
+        
+        <!-- Contact Page -->
+        <div id="contact-page" class="page hidden">
+            <section class="text-center">
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4"><span class="gradient-text">Get In Touch</span></h1>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-12">Have a question or need support? We're here to help.</p>
+            </section>
+            <div class="max-w-lg mx-auto bg-gray-900 border border-gray-800 rounded-lg p-8 text-center">
+                <h3 class="text-2xl font-bold mb-4">Support Chat</h3>
+                <p class="text-gray-400 mb-6">For the fastest response, please use our live support chat on Telegram. Our agents are available to help with activation, withdrawals, and any other questions.</p>
+                <a href="https://tawk.to/chat/68bda438b60b8b19255cffae/1j4icj04t" target="_blank" class="bg-teal-500 hover:bg-teal-600 text-white font-bold text-lg px-8 py-3 rounded-lg transition inline-block">
+                    💬 Chat with Support
+                </a>
+                <div class="my-8 border-t border-gray-700"></div>
+                <h3 class="text-2xl font-bold mb-4">Email Support</h3>
+                <p class="text-gray-400">For general inquiries, you can also reach us via email.</p>
+                <p class="text-teal-400 text-lg mt-2">support@zyncpay.live</p>
+            </div>
+             <div class="max-w-lg mx-auto bg-gray-900 border border-gray-800 rounded-lg p-8 mt-10">
+                <h3 class="font-bold text-xl mb-4 text-center">Your Referral Link Generator</h3>
+                <input type="text" id="userIdInput" placeholder="Enter Your ZyncPay User ID" class="w-full bg-gray-800 border border-gray-700 rounded-md px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                <button onclick="generateLink()" class="w-full mt-4 bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 rounded-md transition">Generate Link</button>
+                <div id="resultLink" class="mt-4 text-center text-gray-300 break-words"></div>
+            </div>
+        </div>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 mt-20">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-500">
+            <p>&copy; 2024 ZyncPay.live. All Rights Reserved.</p>
+            <p class="mt-2 text-sm">ZyncPay is a digital platform. Participation involves financial risk. Please engage responsibly.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Navigation Logic ---
+        const pages = document.querySelectorAll('.page');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+
+        function showPage(pageId) {
+            pages.forEach(page => {
+                if (page.id === `${pageId}-page`) {
+                    page.classList.remove('hidden');
+                } else {
+                    page.classList.add('hidden');
+                }
+            });
+            // Hide mobile menu after navigation
+            mobileMenu.classList.add('hidden');
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Toggle mobile menu
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Initialize with home page
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('home');
+        });
+
+        // --- Referral Link Generator ---
+        function generateLink() {
+            // !!! IMPORTANT: Replace 'YourBotUsername' with your actual bot username !!!
+            const botUsername = "YourBotUsername"; 
+            const userId = document.getElementById("userIdInput").value.trim();
+            const resultElement = document.getElementById("resultLink");
+
+            if (userId && /^\d+$/.test(userId)) {
+                const referralLink = `https://t.me/${botUsername}?start=${userId}`;
+                resultElement.innerHTML = `Your link is: <a href="${referralLink}" target="_blank" class="text-teal-400 hover:underline">${referralLink}</a>`;
+            } else {
+                resultElement.innerText = "Please enter a valid numeric User ID.";
+            }
+        }
+    </script>
+</body>
+</html>
