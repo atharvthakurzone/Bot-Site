@@ -242,7 +242,7 @@
                         <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Weekly Bonus: ₹600 (Every 4th week)</li>
                         <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Referral Bonus: ₹450-950</li>
                     </ul>
-                    <a href="https://t.me/ZyncPay_bot" target="_blank" class="mt-8 w-full text-center bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded-lg transition">Activate Plus</a>
+                    <a href="https://t.me/ZyncPay_bot" target="_blank" class="mt-8 w-full text-center bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 rounded-lg transition">Activate Plus</a>
                 </div>
                 <!-- Elite Plan -->
                 <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 flex flex-col">
@@ -254,7 +254,7 @@
                         <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Weekly Bonus: ₹1,200 (Every 4th week)</li>
                         <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Referral Bonus: ₹950-1500</li>
                     </ul>
-                    <a href="https://t.me/ZyncPay_bot" target="_blank" class="mt-8 w-full text-center bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded-lg transition">Activate Elite</a>
+                    <a href="https://t.me/ZyncPay_bot" target="_blank" class="mt-8 w-full text-center bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 rounded-lg transition">Activate Elite</a>
                 </div>
             </div>
         </div>
@@ -322,9 +322,14 @@
             </div>
              <div class="max-w-lg mx-auto bg-gray-900 border border-gray-800 rounded-lg p-8 mt-10">
                 <h3 class="font-bold text-xl mb-4 text-center">Your Referral Link Generator</h3>
-                <input type="text" id="userIdInput" placeholder="Enter Your ZyncPay User ID" class="w-full bg-gray-800 border border-gray-700 rounded-md px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-500">
-                <button onclick="generateLink()" class="w-full mt-4 bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 rounded-md transition">Generate Link</button>
-                <div id="resultLink" class="mt-4 text-center text-gray-300 break-words"></div>
+                <div class="flex items-center space-x-2">
+                    <input type="text" id="userIdInput" placeholder="Enter Your ZyncPay User ID" class="w-full bg-gray-800 border border-gray-700 rounded-md px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    <button onclick="generateLink()" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-md transition">Generate</button>
+                </div>
+                <div id="result-container" class="mt-4 text-center">
+                    <div id="resultLink" class="text-gray-300 break-words"></div>
+                    <button id="copyBtn" onclick="copyReferralLink()" class="hidden mt-2 bg-teal-500 hover:bg-teal-600 text-white text-sm font-semibold px-3 py-1 rounded-md transition">Copy Link</button>
+                </div>
             </div>
         </div>
 
@@ -355,22 +360,17 @@
                     page.classList.add('hidden');
                 }
             });
-            // Hide mobile menu after navigation
             mobileMenu.classList.add('hidden');
-            // Scroll to top
             window.scrollTo(0, 0);
         }
 
-        // Toggle mobile menu
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Initialize with home page
         document.addEventListener('DOMContentLoaded', () => {
             showPage('home');
             
-            // --- Initialize Testimonial Carousel ---
             var slider = tns({
                 container: '.my-slider',
                 items: 1,
@@ -380,22 +380,43 @@
                 autoplayButtonOutput: false,
                 mouseDrag: true,
                 controlsContainer: "#custom-controls",
-                nav: false, // Disables the dots
+                nav: false,
             });
         });
 
         // --- Referral Link Generator ---
+        let generatedReferralLink = '';
+        const resultElement = document.getElementById("resultLink");
+        const copyBtn = document.getElementById("copyBtn");
+
         function generateLink() {
             const botUsername = "ZyncPay_bot"; 
             const userId = document.getElementById("userIdInput").value.trim();
-            const resultElement = document.getElementById("resultLink");
-
+            
             if (userId && /^\d+$/.test(userId)) {
-                const referralLink = `https://t.me/${botUsername}?start=${userId}`;
-                resultElement.innerHTML = `Your link is: <a href="${referralLink}" target="_blank" class="text-teal-400 hover:underline">${referralLink}</a>`;
+                generatedReferralLink = `https://t.me/${botUsername}?start=${userId}`;
+                resultElement.innerHTML = `Your link is: <a href="${generatedReferralLink}" target="_blank" class="text-teal-400 hover:underline">${generatedReferralLink}</a>`;
+                copyBtn.classList.remove('hidden');
+                copyBtn.textContent = 'Copy Link';
             } else {
+                generatedReferralLink = '';
                 resultElement.innerText = "Please enter a valid numeric User ID.";
+                copyBtn.classList.add('hidden');
             }
+        }
+        
+        function copyReferralLink() {
+            if (!generatedReferralLink) return;
+
+            navigator.clipboard.writeText(generatedReferralLink).then(() => {
+                copyBtn.textContent = 'Copied!';
+                setTimeout(() => {
+                    copyBtn.textContent = 'Copy Link';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                alert('Failed to copy link.');
+            });
         }
     </script>
 
