@@ -13,6 +13,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tiny Slider 2 for Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
 
     <style>
         /* Base styling */
@@ -34,6 +37,35 @@
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+        /* Spinner for loading state */
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            border-left-color: #2dd4bf;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        /* Carousel Custom Controls */
+        .tns-controls button {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+        .tns-controls button:hover {
+            background: rgba(255,255,255,0.2);
         }
     </style>
 </head>
@@ -80,8 +112,26 @@
                     🚀 Launch Telegram Bot
                 </a>
             </section>
-
+            
+            <!-- Live Stats Section -->
             <section class="py-20">
+                 <div class="grid md:grid-cols-3 gap-8 text-center max-w-4xl mx-auto">
+                    <div>
+                        <p class="text-4xl font-bold gradient-text">1,500+</p>
+                        <p class="text-gray-400 mt-2">Total Members</p>
+                    </div>
+                    <div>
+                        <p class="text-4xl font-bold gradient-text">800+</p>
+                        <p class="text-gray-400 mt-2">Active Plans</p>
+                    </div>
+                    <div>
+                        <p class="text-4xl font-bold gradient-text">₹2,50,000+</p>
+                        <p class="text-gray-400 mt-2">Total Payouts</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-12">
                 <h2 class="text-3xl font-bold text-center mb-12">How It Works in 3 Simple Steps</h2>
                 <div class="grid md:grid-cols-3 gap-8 text-center">
                     <div class="bg-gray-900 p-8 rounded-xl border border-gray-800">
@@ -98,6 +148,58 @@
                         <div class="text-4xl mb-4">3️⃣</div>
                         <h3 class="text-xl font-bold mb-2">Refer & Earn</h3>
                         <p class="text-gray-400">Share your unique referral code. You'll earn a generous bonus for every new user who activates a plan.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials Carousel Section -->
+            <section class="py-20">
+                <h2 class="text-3xl font-bold text-center mb-12">What Our Members Are Saying</h2>
+                <div class="relative max-w-4xl mx-auto">
+                    <div class="my-slider">
+                        <!-- Testimonial 1 -->
+                        <div class="px-2">
+                            <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 h-full">
+                                <p class="text-gray-300 mb-4">"I was skeptical at first, but ZyncPay is the real deal. The daily income is consistent, and I received my first withdrawal in just a few hours. Highly recommended!"</p>
+                                <p class="font-bold text-teal-400">- Priya S., Mumbai</p>
+                            </div>
+                        </div>
+                        <!-- Testimonial 2 -->
+                         <div class="px-2">
+                            <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 h-full">
+                                <p class="text-gray-300 mb-4">"The referral system is amazing. I just shared my link with a few friends, and the bonuses helped me reach my withdrawal limit so much faster. The support team is also very responsive."</p>
+                                <p class="font-bold text-teal-400">- Amit K., Delhi</p>
+                            </div>
+                        </div>
+                        <!-- Testimonial 3 -->
+                         <div class="px-2">
+                            <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 h-full">
+                                <p class="text-gray-300 mb-4">"Finally, a platform that is simple to use. Everything happens on Telegram, which I use every day. I activated the Plus plan and the daily credits arrive like clockwork."</p>
+                                <p class="font-bold text-teal-400">- Rajesh V., Bengaluru</p>
+                            </div>
+                        </div>
+                        <!-- Testimonial 4 -->
+                         <div class="px-2">
+                            <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 h-full">
+                                <p class="text-gray-300 mb-4">"As a student, ZyncPay has been a great source of side income. It's not a get-rich-quick scheme, but the earnings are steady and the platform is trustworthy."</p>
+                                <p class="font-bold text-teal-400">- Sunita M., Pune</p>
+                            </div>
+                        </div>
+                        <!-- Testimonial 5 -->
+                         <div class="px-2">
+                            <div class="bg-gray-900 p-8 rounded-xl border border-gray-800 h-full">
+                                <p class="text-gray-300 mb-4">"I'm impressed with the transparency. I can track all my earnings and referrals right inside the bot. The weekly bonus is a great extra incentive to stay active."</p>
+                                <p class="font-bold text-teal-400">- Vikram P., Kolkata</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="custom-controls" class="tns-controls flex justify-center mt-8">
+                        <button data-controls="prev" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                        </button>
+                        <button data-controls="next" type="button">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                        </button>
                     </div>
                 </div>
             </section>
@@ -122,11 +224,14 @@
                 <div class="bg-gray-900 p-8 rounded-xl border-2 border-teal-500 flex flex-col">
                     <h3 class="text-2xl font-bold mb-2">Basic Plan</h3>
                     <p class="text-4xl font-bold mb-4">₹1,499</p>
-                    <p class="text-gray-400 mb-6">Ideal for getting started and understanding the platform.</p>
+                     <p class="text-gray-400 mb-6">Ideal for getting started and understanding the platform.</p>
                     <ul class="space-y-4 text-gray-300 flex-grow">
-                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Daily Income: ₹100</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Daily Income: ₹100 <span class="text-gray-500 ml-2">(Up to ₹3,000/mo)</span></li>
                         <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Weekly Bonus: ₹250 (Every 4th week)</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Referral Bonus: ₹150-450</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Referral Bonus: ₹150</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Withdrawal Limit Increase: +₹1,000</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Duration: Daily income for 30 days</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Withdrawal Unlock: 1 Active Referral</li>
                     </ul>
                     <a href="https://t.me/ZyncPay_bot" target="_blank" class="mt-8 w-full text-center bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 rounded-lg transition">Activate Basic</a>
                 </div>
@@ -136,9 +241,12 @@
                     <p class="text-4xl font-bold mb-4">₹4,499</p>
                     <p class="text-gray-400 mb-6">The most popular choice for serious earners looking for higher returns.</p>
                     <ul class="space-y-4 text-gray-300 flex-grow">
-                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Daily Income: ₹300</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Daily Income: ₹300 <span class="text-gray-500 ml-2">(Up to ₹9,000/mo)</span></li>
                         <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Weekly Bonus: ₹600 (Every 4th week)</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Referral Bonus: ₹450-950</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Referral Bonus: ₹450</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Withdrawal Limit Increase: +₹3,000</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Duration: Daily income for 30 days</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Withdrawal Unlock: 1 Active Referral</li>
                     </ul>
                     <a href="https://t.me/ZyncPay_bot" target="_blank" class="mt-8 w-full text-center bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded-lg transition">Activate Plus</a>
                 </div>
@@ -148,9 +256,12 @@
                     <p class="text-4xl font-bold mb-4">₹9,500</p>
                     <p class="text-gray-400 mb-6">Maximum earning potential for dedicated users and network builders.</p>
                     <ul class="space-y-4 text-gray-300 flex-grow">
-                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Daily Income: ₹750</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Daily Income: ₹750 <span class="text-gray-500 ml-2">(Up to ₹22,500/mo)</span></li>
                         <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Weekly Bonus: ₹1,200 (Every 4th week)</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Referral Bonus: ₹950-1500</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Referral Bonus: ₹950</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Withdrawal Limit Increase: +₹6,000</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Duration: Daily income for 30 days</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Withdrawal Unlock: 1 Active Referral</li>
                     </ul>
                     <a href="https://t.me/ZyncPay_bot" target="_blank" class="mt-8 w-full text-center bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded-lg transition">Activate Elite</a>
                 </div>
@@ -174,7 +285,7 @@
                 </div>
                 <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
                     <h3 class="font-bold text-lg mb-2">How do I withdraw my earnings?</h3>
-                    <p class="text-gray-400">You can request a withdrawal directly from the bot's Wallet section. The minimum withdrawal amount is ₹250. Requests are processed by our admin team and sent to your provided UPI ID.</p>
+                    <p class="text-gray-400">Once you have at least one active referral, you can request a withdrawal directly from the bot's Wallet section. The minimum withdrawal amount is ₹250. Requests are processed by our admin team and sent to your provided UPI ID.</p>
                 </div>
                  <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
                     <h3 class="font-bold text-lg mb-2">How long does it take for my account to be activated?</h3>
@@ -182,7 +293,7 @@
                 </div>
                 <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
                     <h3 class="font-bold text-lg mb-2">How does the referral system work?</h3>
-                    <p class="text-gray-400">When a new user joins using your unique referral code and activates a plan, you receive a one-time bonus. The bonus amount is a percentage of their plan's cost, as detailed on our Plans page.</p>
+                    <p class="text-gray-400">When a new user joins using your unique referral code and activates a plan, you receive a one-time bonus. The bonus amount is a percentage of their plan's cost, as detailed on our Plans page. Your referral also needs to be 'active' (i.e., have their own plan) for you to be eligible for withdrawals.</p>
                 </div>
                 <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
                     <h3 class="font-bold text-lg mb-2">Can I increase my withdrawal limit?</h3>
@@ -230,6 +341,22 @@
                 <button onclick="generateLink()" class="w-full mt-4 bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 rounded-md transition">Generate Link</button>
                 <div id="resultLink" class="mt-4 text-center text-gray-300 break-words"></div>
             </div>
+
+            <!-- Gemini API Feature: Referral Message Generator -->
+            <div class="max-w-lg mx-auto bg-gray-900 border border-gray-800 rounded-lg p-8 mt-10">
+                <h3 class="font-bold text-xl mb-4 text-center">✨ AI-Powered Referral Message Generator</h3>
+                <p class="text-gray-400 text-center mb-6">Let our AI help you write the perfect message to share with your friends!</p>
+                <div class="space-y-4">
+                    <input type="text" id="userNameInput" placeholder="Enter your first name" class="w-full bg-gray-800 border border-gray-700 rounded-md px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    <input type="text" id="userIdForMessage" placeholder="Enter your ZyncPay User ID" class="w-full bg-gray-800 border border-gray-700 rounded-md px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                </div>
+                <button id="generateMessageBtn" onclick="generateReferralMessages()" class="w-full mt-4 bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 rounded-md transition flex items-center justify-center">
+                   <span id="generateBtnText">Generate Messages</span>
+                   <div id="generateSpinner" class="spinner hidden ml-2"></div>
+                </button>
+                <div id="messageResults" class="mt-6 text-left"></div>
+            </div>
+
         </div>
 
     </main>
@@ -241,6 +368,9 @@
             <p class="mt-2 text-sm">ZyncPay is a digital platform. Participation involves financial risk. Please engage responsibly.</p>
         </div>
     </footer>
+    
+    <!-- Tiny Slider 2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
 
     <script>
         // --- Navigation Logic ---
@@ -270,11 +400,27 @@
         // Initialize with home page
         document.addEventListener('DOMContentLoaded', () => {
             showPage('home');
+            
+            // --- Initialize Testimonial Carousel ---
+            var slider = tns({
+                container: '.my-slider',
+                items: 1,
+                slideBy: 'page',
+                autoplay: true,
+                autoplayButtonOutput: false,
+                mouseDrag: true,
+                controlsContainer: "#custom-controls",
+                nav: false, // Disables the dots
+                responsive: {
+                    768: {
+                        items: 2
+                    }
+                }
+            });
         });
 
         // --- Referral Link Generator ---
         function generateLink() {
-            // !!! IMPORTANT: Replace 'YourBotUsername' with your actual bot username !!!
             const botUsername = "ZyncPay_bot"; 
             const userId = document.getElementById("userIdInput").value.trim();
             const resultElement = document.getElementById("resultLink");
@@ -286,7 +432,145 @@
                 resultElement.innerText = "Please enter a valid numeric User ID.";
             }
         }
+        
+        // --- Gemini API Feature: Referral Message Generator ---
+        const botUsername = "ZyncPay_bot";
+        const generateBtn = document.getElementById('generateMessageBtn');
+        const generateBtnText = document.getElementById('generateBtnText');
+        const generateSpinner = document.getElementById('generateSpinner');
+        const messageResults = document.getElementById('messageResults');
+
+        async function generateReferralMessages() {
+            const name = document.getElementById('userNameInput').value.trim();
+            const userId = document.getElementById('userIdForMessage').value.trim();
+
+            if (!name || !userId) {
+                messageResults.innerHTML = `<p class="text-red-400">Please enter your name and User ID.</p>`;
+                return;
+            }
+            if (!/^\d+$/.test(userId)) {
+                 messageResults.innerHTML = `<p class="text-red-400">Please enter a valid numeric User ID.</p>`;
+                return;
+            }
+
+            const referralLink = `https://t.me/${botUsername}?start=${userId}`;
+            
+            // Show loading state
+            generateBtnText.textContent = 'Generating...';
+            generateSpinner.classList.remove('hidden');
+            generateBtn.disabled = true;
+            messageResults.innerHTML = '';
+
+            const systemPrompt = `You are a friendly and enthusiastic marketing assistant for a Telegram-based earning platform called ZyncPay. Your goal is to help users refer their friends by creating short, exciting, and trustworthy messages in plain, simple language.`;
+            const userQuery = `My name is ${name} and my ZyncPay referral link is ${referralLink}. Please generate 3 different referral messages for me to share with my friends in India. One should be a casual message for WhatsApp, one slightly more formal for a Telegram group, and one exciting message for a social media story.`;
+            const apiKey = "" 
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                },
+                generationConfig: {
+                  responseMimeType: "application/json",
+                  responseSchema: {
+                      type: "OBJECT",
+                      properties: {
+                          "messages": {
+                              "type": "ARRAY",
+                              "items": {
+                                  "type": "OBJECT",
+                                  "properties": {
+                                      "title": { "type": "STRING" },
+                                      "content": { "type": "STRING" }
+                                  },
+                                 "required": ["title", "content"]
+                              }
+                          }
+                      },
+                      "required": ["messages"]
+                  }
+                }
+            };
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API request failed with status ${response.status}`);
+                }
+                
+                const result = await response.json();
+                const candidate = result.candidates?.[0];
+
+                if (candidate?.content?.parts?.[0]?.text) {
+                    const jsonResponse = JSON.parse(candidate.content.parts[0].text);
+                    displayMessages(jsonResponse.messages);
+                } else {
+                    throw new Error("No content found in API response.");
+                }
+
+            } catch (error) {
+                console.error("Error calling Gemini API:", error);
+                messageResults.innerHTML = '<p class="text-red-400">Sorry, something went wrong. Please try again later.</p>';
+            } finally {
+                // Restore button state
+                generateBtnText.textContent = 'Generate Messages';
+                generateSpinner.classList.add('hidden');
+                generateBtn.disabled = false;
+            }
+        }
+
+        function displayMessages(messages) {
+            let html = '';
+            messages.forEach((msg, index) => {
+                const textId = `message-text-${index}`;
+                html += `
+                    <div class="bg-gray-800 rounded-lg p-4 mb-4">
+                        <h4 class="font-bold text-teal-400 mb-2">${msg.title}</h4>
+                        <p id="${textId}" class="text-gray-300 whitespace-pre-wrap">${msg.content}</p>
+                        <button onclick="copyToClipboard('${textId}')" class="mt-3 bg-gray-700 hover:bg-gray-600 text-white text-sm font-semibold px-3 py-1 rounded-md transition">Copy</button>
+                    </div>
+                `;
+            });
+            messageResults.innerHTML = html;
+        }
+
+        function copyToClipboard(elementId) {
+            const textToCopy = document.getElementById(elementId).innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = textToCopy;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            try {
+                document.execCommand('copy');
+                alert('Message copied to clipboard!');
+            } catch (err) {
+                console.error('Failed to copy text: ', err);
+                alert('Failed to copy text.');
+            }
+            document.body.removeChild(tempTextArea);
+        }
+
     </script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/68bda438b60b8b19255cffae/1j4icj04t';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
 </body>
 </html>
 
