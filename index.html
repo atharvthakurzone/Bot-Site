@@ -6,6 +6,23 @@
     <title>ZyncPay - Start Earning Daily with Telegram</title>
     <meta name="description" content="Join ZyncPay, the Telegram-based platform to earn daily income and referral bonuses. Activate a plan and start your earning journey today.">
     
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="ZyncPay, Telegram earning, daily income, online earning India, referral bonus, investment plans, make money online">
+    <meta name="author" content="ZyncPay">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ZyncPay - Start Earning Daily with Telegram">
+    <meta property="og:description" content="Join ZyncPay, the Telegram-based platform to earn daily income and referral bonuses. Activate a plan and start your earning journey today.">
+    <meta property="og:image" content="https://placehold.co/1200x630/0a0a0a/2dd4bf?text=ZyncPay">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="ZyncPay - Start Earning Daily with Telegram">
+    <meta property="twitter:description" content="Join ZyncPay, the Telegram-based platform to earn daily income and referral bonuses. Activate a plan and start your earning journey today.">
+    <meta property="twitter:image" content="https://placehold.co/1200x630/0a0a0a/2dd4bf?text=ZyncPay">
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -76,11 +93,11 @@
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" onclick="showPage('home')" class="text-2xl font-bold gradient-text">ZyncPay</a>
             <div class="hidden md:flex space-x-6 items-center">
-                <a href="#" onclick="showPage('home')" class="text-gray-300 hover:text-teal-400 transition">Home</a>
-                <a href="#" onclick="showPage('plans')" class="text-gray-300 hover:text-teal-400 transition">Plans</a>
-                <a href="#" onclick="showPage('faq')" class="text-gray-300 hover:text-teal-400 transition">FAQ</a>
-                <a href="#" onclick="showPage('about')" class="text-gray-300 hover:text-teal-400 transition">About</a>
-                <a href="#" onclick="showPage('contact')" class="text-gray-300 hover:text-teal-400 transition">Contact</a>
+                <a href="#" onclick="showPage('home')" data-page="home" class="nav-item text-gray-300 hover:text-teal-400 transition">Home</a>
+                <a href="#" onclick="showPage('plans')" data-page="plans" class="nav-item text-gray-300 hover:text-teal-400 transition">Plans</a>
+                <a href="#" onclick="showPage('faq')" data-page="faq" class="nav-item text-gray-300 hover:text-teal-400 transition">FAQ</a>
+                <a href="#" onclick="showPage('about')" data-page="about" class="nav-item text-gray-300 hover:text-teal-400 transition">About</a>
+                <a href="#" onclick="showPage('contact')" data-page="contact" class="nav-item text-gray-300 hover:text-teal-400 transition">Contact</a>
             </div>
             <a href="https://t.me/ZyncPay_bot" target="_blank" class="hidden md:block bg-teal-500 hover:bg-teal-600 text-white font-semibold px-5 py-2 rounded-lg transition">Start on Telegram</a>
             <button id="mobile-menu-button" class="md:hidden text-gray-300">
@@ -91,11 +108,11 @@
         </nav>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
-            <a href="#" onclick="showPage('home')" class="block text-gray-300 hover:text-teal-400 transition py-2">Home</a>
-            <a href="#" onclick="showPage('plans')" class="block text-gray-300 hover:text-teal-400 transition py-2">Plans</a>
-            <a href="#" onclick="showPage('faq')" class="block text-gray-300 hover:text-teal-400 transition py-2">FAQ</a>
-            <a href="#" onclick="showPage('about')" class="block text-gray-300 hover:text-teal-400 transition py-2">About</a>
-            <a href="#" onclick="showPage('contact')" class="block text-gray-300 hover:text-teal-400 transition py-2">Contact</a>
+            <a href="#" onclick="showPage('home')" data-page="home" class="nav-item block text-gray-300 hover:text-teal-400 transition py-2">Home</a>
+            <a href="#" onclick="showPage('plans')" data-page="plans" class="nav-item block text-gray-300 hover:text-teal-400 transition py-2">Plans</a>
+            <a href="#" onclick="showPage('faq')" data-page="faq" class="nav-item block text-gray-300 hover:text-teal-400 transition py-2">FAQ</a>
+            <a href="#" onclick="showPage('about')" data-page="about" class="nav-item block text-gray-300 hover:text-teal-400 transition py-2">About</a>
+            <a href="#" onclick="showPage('contact')" data-page="contact" class="nav-item block text-gray-300 hover:text-teal-400 transition py-2">Contact</a>
             <a href="https://t.me/ZyncPay_bot" target="_blank" class="block w-full text-center bg-teal-500 hover:bg-teal-600 text-white font-semibold mt-4 px-5 py-2 rounded-lg transition">Start on Telegram</a>
         </div>
     </header>
@@ -116,19 +133,19 @@
             <!-- Live Stats Section -->
             <section class="py-20">
                  <div class="grid md:grid-cols-3 gap-8 text-center max-w-4xl mx-auto">
-                    <div>
-                        <p class="text-4xl font-bold gradient-text">1,200+</p>
-                        <p class="text-gray-400 mt-2">Total Members</p>
-                    </div>
-                    <div>
-                        <p class="text-4xl font-bold gradient-text">800+</p>
-                        <p class="text-gray-400 mt-2">Active Plans</p>
-                    </div>
-                    <div>
-                        <p class="text-4xl font-bold gradient-text">₹5,00,000+</p>
-                        <p class="text-gray-400 mt-2">Total Payouts</p>
-                    </div>
-                </div>
+                      <div>
+                          <p class="text-4xl font-bold gradient-text">1,200+</p>
+                          <p class="text-gray-400 mt-2">Total Members</p>
+                      </div>
+                      <div>
+                          <p class="text-4xl font-bold gradient-text">800+</p>
+                          <p class="text-gray-400 mt-2">Active Plans</p>
+                      </div>
+                      <div>
+                          <p class="text-4xl font-bold gradient-text">₹5,00,000+</p>
+                          <p class="text-gray-400 mt-2">Total Payouts</p>
+                      </div>
+                  </div>
             </section>
 
             <section class="py-12">
@@ -228,7 +245,7 @@
                     <ul class="space-y-4 text-gray-300 flex-grow">
                         <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Duration: ∞</li>
                         <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Daily Income: ₹100 <span class="text-gray-500 ml-2">(Up to ₹5,000/mo)</span></li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Weekly Bonus: ₹250 (Every 4th week)</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Monthly Loyalty Bonus: ₹250</li>
                         <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Referral Bonus: ₹150-950(Based on referred user's plan)</li>
                     </ul>
                     <a href="https://t.me/ZyncPay_bot" target="_blank" class="mt-8 w-full text-center bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 rounded-lg transition">Activate Basic</a>
@@ -241,7 +258,7 @@
                     <ul class="space-y-4 text-gray-300 flex-grow">
                         <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Duration: ∞</li>
                         <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Daily Income: ₹300 <span class="text-gray-500 ml-2">(Up to ₹12,000/mo)</span></li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Weekly Bonus: ₹600 (Every 4th week)</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Monthly Loyalty Bonus: ₹600</li>
                         <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Referral Bonus: ₹180-1200(Based on referred user's plan)</li>
                     </ul>
                     <a href="https://t.me/ZyncPay_bot" target="_blank" class="mt-8 w-full text-center bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 rounded-lg transition">Activate Plus</a>
@@ -254,7 +271,7 @@
                     <ul class="space-y-4 text-gray-300 flex-grow">
                         <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Duration: ∞</li>
                         <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Daily Income: ₹750 <span class="text-gray-500 ml-2">(Up to ₹30,000/mo)</span></li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Weekly Bonus: ₹1,200 (Every 4th week)</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Monthly Loyalty Bonus: ₹1,200</li>
                         <li class="flex items-center"><svg class="w-5 h-5 text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Referral Bonus: ₹225-1500(Based on referred user's plan)</li>
                     </ul>
                     <a href="https://t.me/ZyncPay_bot" target="_blank" class="mt-8 w-full text-center bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 rounded-lg transition">Activate Elite</a>
@@ -352,10 +369,12 @@
     <script>
         // --- Navigation Logic ---
         const pages = document.querySelectorAll('.page');
+        const navItems = document.querySelectorAll('.nav-item');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileMenuButton = document.getElementById('mobile-menu-button');
 
         function showPage(pageId) {
+            // Hide all pages
             pages.forEach(page => {
                 if (page.id === `${pageId}-page`) {
                     page.classList.remove('hidden');
@@ -363,6 +382,16 @@
                     page.classList.add('hidden');
                 }
             });
+
+            // Update active state for nav items
+            navItems.forEach(item => {
+                item.classList.remove('text-teal-400', 'font-semibold');
+                if (item.dataset.page === pageId) {
+                    item.classList.add('text-teal-400', 'font-semibold');
+                }
+            });
+
+            // Hide mobile menu and scroll to top
             mobileMenu.classList.add('hidden');
             window.scrollTo(0, 0);
         }
@@ -384,6 +413,14 @@
                 mouseDrag: true,
                 controlsContainer: "#custom-controls",
                 nav: false,
+                responsive: {
+                    768: {
+                        items: 2
+                    },
+                     1024: {
+                        items: 3
+                    }
+                }
             });
         });
 
@@ -411,15 +448,24 @@
         function copyReferralLink() {
             if (!generatedReferralLink) return;
 
-            navigator.clipboard.writeText(generatedReferralLink).then(() => {
+            // Use the older 'execCommand' for broader compatibility in sandboxed environments
+            const textArea = document.createElement("textarea");
+            textArea.value = generatedReferralLink;
+            textArea.style.position = "fixed"; // Avoid scrolling to bottom
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                document.execCommand('copy');
                 copyBtn.textContent = 'Copied!';
                 setTimeout(() => {
                     copyBtn.textContent = 'Copy Link';
                 }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy: ', err);
+            } catch (err) {
+                console.error('Fallback: Oops, unable to copy', err);
                 alert('Failed to copy link.');
-            });
+            }
+            document.body.removeChild(textArea);
         }
     </script>
 
@@ -429,7 +475,7 @@
     (function(){
     var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
     s1.async=true;
-    s1.src='https://embed.tawk.to/68bda438b60b8b19255cffae/1j4icj04t';
+    s1.src='https://embed.tawk.to/66a4d55a32dca6754000147c/1i3q6jkcs';
     s1.charset='UTF-8';
     s1.setAttribute('crossorigin','*');
     s0.parentNode.insertBefore(s1,s0);
